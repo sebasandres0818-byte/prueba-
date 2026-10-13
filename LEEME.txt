@@ -1,0 +1,14 @@
+CRECE VITAL - CÓMO EDITAR TU PÁGINA (sin programar)
+
+Archivos:
+  index.html  -> textos, productos, galería, contacto (aquí cambias el contenido)
+  styles.css  -> colores, tamaños y fuentes (arriba del archivo, sección COLORES)
+  script.js   -> solo el carrito (normalmente no se toca)
+  img/        -> pon aquí tus fotos con ESTOS nombres y aparecerán solas:
+                logo.png, portada.jpg, tienda.jpg,
+                producto1.jpg ... producto4.jpg,
+                galeria1.jpg ... galeria8.jpg
+  (Si cambias el nombre del archivo, cámbialo también en index.html.)
+
+Para abrirla: doble clic en index.html.
+Para ver los cambios: guarda el archivo y recarga el navegador (F5).

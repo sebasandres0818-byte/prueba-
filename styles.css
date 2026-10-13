@@ -1,0 +1,116 @@
+/* ================= COLORES Y MEDIDAS: edita aquí ================= */
+:root{
+  --color-principal:#e09a3e;   /* botones, menú activo */
+  --crema:#fbefd9;             /* fondos suaves */
+  --fondo:#ffffff;
+  --texto:#2b2b2b;
+  --tarjeta:#f6e3c4;           /* fondo de recuadros de imagen */
+  --linea:#e5d4b5;
+  --oferta:#c0472f;            /* etiqueta "Oferta" */
+}
+/* ================================================================= */
+*{box-sizing:border-box}
+body{margin:0;background:var(--fondo);color:var(--texto);font-family:Jost,system-ui,sans-serif}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;margin:0}
+a{color:inherit;text-decoration:none}
+.contenedor{max-width:1000px;margin:0 auto;padding:0 20px}
+
+/* Cabecera */
+header{background:var(--crema);position:sticky;top:0;z-index:5;border-bottom:1px solid var(--linea)}
+header .contenedor{display:flex;align-items:center;justify-content:space-between;height:72px;gap:12px}
+.logo{width:150px;height:52px;flex:none}
+nav{display:flex;gap:22px}
+nav a{padding:4px 0;border-bottom:2px solid transparent}
+nav a.activo,nav a:hover{color:var(--color-principal);border-color:var(--color-principal)}
+.carrito-btn{position:relative;font-size:24px}
+.carrito-btn b{position:absolute;top:-8px;right:-10px;background:var(--color-principal);color:#fff;font:500 12px Jost,sans-serif;border-radius:50%;min-width:20px;height:20px;display:grid;place-items:center}
+
+/* Recuadro de imagen: muestra tu foto si existe, si no un recuadro punteado */
+.foto{position:relative;width:100%;height:100%;min-height:40px;background:var(--tarjeta);border:2px dashed var(--color-principal);border-radius:12px;overflow:hidden;display:grid;place-items:center;text-align:center;font-size:13px;padding:4px}
+.foto span{opacity:.7}
+.foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:var(--tarjeta)}
+.logo .foto img{object-fit:contain}
+
+/* Portada */
+.portada{background:linear-gradient(120deg,#8d7a63,#cdb89a 55%,#e8d7bb);color:#fff;padding:50px 0}
+.portada .contenedor{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center}
+.portada h1{font-size:clamp(34px,6vw,54px);line-height:1.1}
+.portada .foto{height:300px}
+.btn{display:inline-block;background:var(--color-principal);color:#fff;border:0;border-radius:999px;padding:10px 22px;font:500 15px Jost,sans-serif;cursor:pointer}
+.btn.borde{background:none;color:var(--texto);border:1px solid var(--color-principal)}
+.portada .btn{margin-top:22px}
+
+/* Secciones */
+section{padding:44px 0}
+section.crema{background:var(--crema)}
+h2.titulo{font-size:34px;margin-bottom:6px}
+.subtitulo{opacity:.75;margin:0 0 22px}
+.vista{display:none}.vista.activa{display:block}
+
+/* Productos */
+.cuadricula{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:24px}
+.producto{text-align:center}
+.producto .imagen{position:relative;height:210px;margin-bottom:12px}
+.producto h3{font-size:20px;margin-bottom:4px}
+.producto p{margin:0 0 6px;font-size:13px;opacity:.75}
+.precio{font-weight:500;display:block;margin-bottom:10px}
+.precio s{opacity:.5;font-weight:400;margin-right:6px}
+.etiqueta{position:absolute;top:8px;left:8px;background:var(--oferta);color:#fff;font-size:12px;padding:2px 10px;border-radius:99px;z-index:2}
+
+/* Galería */
+.galeria{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.galeria.grande{grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
+.galeria .item{aspect-ratio:1}
+
+/* Puntos fuertes */
+.puntos{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.puntos div{background:var(--crema);border-radius:12px;padding:18px;text-align:center}
+.puntos i{font-style:normal;font-size:30px;display:block}
+
+/* Tienda física y contacto */
+.mapa{height:240px;margin-top:10px}
+.contacto{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.contacto a{display:block;background:var(--crema);border-radius:12px;padding:18px}
+.contacto b{display:block;font-size:13px;opacity:.7;font-weight:400;margin-bottom:4px}
+
+/* Carrito */
+.fila{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:12px 0;border-bottom:1px solid var(--linea)}
+.cantidad{display:flex;align-items:center;gap:8px}
+.cantidad button{width:28px;height:28px;border-radius:50%;border:1px solid var(--color-principal);background:none;color:var(--texto);cursor:pointer}
+.total{font-size:22px;text-align:right;margin:16px 0}
+input{width:100%;padding:10px 14px;border:1px solid var(--linea);border-radius:10px;background:var(--fondo);color:var(--texto);font:inherit;margin-bottom:10px}
+footer{background:var(--crema);padding:26px 0;font-size:14px;text-align:center}
+.aviso{position:fixed;bottom:20px;left:50%;transform:translate(-50%,90px);background:var(--texto);color:var(--fondo);padding:10px 18px;border-radius:999px;font-size:14px;transition:.3s;z-index:9}
+.aviso.on{transform:translate(-50%,0)}
+
+/* Celular */
+@media(max-width:700px){
+  header .contenedor{flex-wrap:wrap;height:auto;padding:8px 20px}
+  nav{order:3;width:100%;justify-content:space-between;gap:6px;font-size:14px}
+  .portada .contenedor{grid-template-columns:1fr}
+  .logo{width:120px}
+}
+
+/* Quita borde y texto cuando ya hay foto */
+.foto:has(img){border:0;background:none}
+.foto:has(img) span{display:none}
+
+/* Portada: muestra la botella completa sin recortar */
+.portada .foto{height:380px}
+.portada .foto img{object-fit:contain;background:none}
+
+/* Tarjetas de tamaño fijo, centradas */
+.cuadricula{grid-template-columns:repeat(auto-fill,260px);justify-content:center}
+
+/* Foto completa, sin recortar */
+.producto .imagen{height:320px}
+.producto .foto img{object-fit:contain}
+.producto .foto:has(img){background:#f3efe6}
+
+/* Galería: fotos completas, sin recortar */
+.galeria .foto img{object-fit:contain}
+.galeria .foto:has(img){background:#f3ebdc}
+
+/* Portada: la foto toma su propio tamaño y lleva bordes redondos */
+.portada .foto:has(img){height:auto;display:flex;justify-content:center;background:none}
+.portada .foto:has(img) img{position:static;width:auto;max-width:100%;height:380px;border-radius:24px;box-shadow:0 10px 30px rgba(0,0,0,.2)}
